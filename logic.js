@@ -6,7 +6,7 @@ const Tweeter = function(){
     return _posts
     }
     const addPost = function(text){
-    if(text==""){ return}
+    if (!text.replace(/\s/g, '').length) {return}
     let newpost = {id:"p"+postIdCounter,text:text,comments : []}
     _posts.push(newpost)
     postIdCounter++
@@ -23,7 +23,7 @@ const Tweeter = function(){
         }
     }
     const addComment = function(postID,text ){
-        if(text==""){ return} 
+        if (!text.replace(/\s/g, '').length) {return}
         let newcomment = {id :"c"+commentIdCounter , text : text}
         for (let i = 0; i < _posts.length; i++){
             if (_posts[i].id == postID)

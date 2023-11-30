@@ -30,8 +30,8 @@ const createPostHeader = function(postText,postID){
 }
 const createrCommentArea = function(postID,commentID,commentText){
 const dynamicDiv = `<div>
-                     <Button class="comRemoveBtn" comment-id="${commentID}" post-id="${postID}" > </Button>   
-                     <h3 class="comments" > ${commentText}</h3>
+                    <Button class="comRemoveBtn" comment-id="${commentID}" post-id="${postID}" > </Button>
+                    <h3 class="comments" > ${commentText}</h3>
                     </div>`
 $(`#${postID}`).append($(dynamicDiv))                    
 }

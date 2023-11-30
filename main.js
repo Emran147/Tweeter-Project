@@ -4,7 +4,9 @@ const renderer = Renderer()
 
 
 const post = function(){
-    tweeter.addPost($('#input').val())
+    const postText =$('#input').val()
+    var formattedInput = postText.replace(/\n/g, "<br>");
+    tweeter.addPost(formattedInput)
     $('#input').val('')
     renderer.renderPosts(tweeter.getPosts())
 }
@@ -15,8 +17,9 @@ $("#posts").on('click',".delete", function() {
   })
 $("#posts").on('click',".commentButton", function() {
     let postID =  $(this).attr('id')
-    const commentID = $(this).siblings(".commentInput").val();
-    tweeter.addComment(postID,commentID)
+    const commentText = $(this).siblings(".commentInput").val();
+    var formattedInput = commentText.replace(/\n/g, "<br>");
+    tweeter.addComment(postID,formattedInput)
     renderer.renderPosts(tweeter.getPosts())
 
   })

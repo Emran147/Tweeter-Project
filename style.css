@@ -22,6 +22,8 @@ body{
     padding: 10px;
     font-size: 1.5vw;
     border-color: gray;
+    font-family: 'Montserrat', sans-serif;
+
 }
 .containerdiv{
  border: 1px solid gray;
@@ -76,6 +78,8 @@ body{
 }
 h3{
     display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+
 }
    .comRemoveBtn {
     box-sizing: border-box;
@@ -109,6 +113,8 @@ h3{
     margin-top: 10px;
     height: 20px;
     width: 350px;
+    font-family: 'Montserrat', sans-serif;
+
 }   
 .commentButton{
     position: absolute;
@@ -119,6 +125,6 @@ h1{
     font-size: 2.5em; /* Adjust the font size as needed */
     font-weight: bold; /* Makes the text bold */
     color: #333; /* Text color */
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Montserrat', sans-serif;
     text-align: center; 
 }
