@@ -128,3 +128,7 @@ h1{
     font-family: 'Montserrat', sans-serif;
     text-align: center; 
 }
+greeting{
+    color: grey;
+    font-family: 'EB Garamond', serif;
+}

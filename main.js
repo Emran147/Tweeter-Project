@@ -1,20 +1,25 @@
 
 const tweeter = Tweeter()
 const renderer = Renderer()
+const input =$('#input')
 
 
 const post = function(){
-    const postText =$('#input').val()
-    var formattedInput = postText.replace(/\n/g, "<br>");
+    const postText = input.val()
+    let formattedInput = postText.replace(/\n/g, "<br>");
     tweeter.addPost(formattedInput)
-    $('#input').val('')
+    input.val('')
     renderer.renderPosts(tweeter.getPosts())
 }
+
+
 $("#posts").on('click',".delete", function() {
-   let id =  $(this).attr('id')
+   const id =  $(this).attr('id')
    tweeter.removePost(id)
    renderer.renderPosts(tweeter.getPosts())
   })
+
+
 $("#posts").on('click',".commentButton", function() {
     let postID =  $(this).attr('id')
     const commentText = $(this).siblings(".commentInput").val();
@@ -23,6 +28,7 @@ $("#posts").on('click',".commentButton", function() {
     renderer.renderPosts(tweeter.getPosts())
 
   })
+
   $("#posts").on('click',".comRemoveBtn", function() {
     let commentID =  $(this).attr('comment-id')
     let postID =  $(this).attr('post-id')
@@ -31,3 +37,20 @@ $("#posts").on('click',".commentButton", function() {
 
   })
 
+const render = function(){
+  renderer.renderPosts(tweeter.getPosts())
+}
+
+const greetingFunc = function(){
+    const currentHour = new Date().getHours();
+    // Check if it's morning (before 12 PM)
+    if (currentHour < 12) {
+      alert("Good morning!");
+      $( "#title" ).append( "<p><greeting> Good morning!</gretting></p>" );
+    } else { // It's afternoon or later
+      alert("Good afternoon!");
+      $( "#title" ).append( "<p><greeting> Good afternoon!</gretting></p>");
+    }
+  }
+
+  greetingFunc()
